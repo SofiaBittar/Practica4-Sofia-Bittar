@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
     }
     public void ClearAudioList()
     {
-        foreach(GameObject  go in activeAudioGameObjects)
+        foreach(GameObject go in activeAudioGameObjects)
         {
             Destroy(go);
         }
