@@ -4,41 +4,26 @@ using UnityEngine;
 
 public class PlatformMove : MonoBehaviour
 {
-    public float speed = 0.60f;
-    private float waitTime;
-    public Transform[] moveDirection;
-    public float startWaitTime = 1.5f;
-    private int i = 0;
-
+    private Rigidbody2D rb;
+    float currentTime;
+    public float
+        maxTime = 1.5f,
+        speed = 2;
     // Start is called before the first frame update
     void Start()
     {
-        waitTime = startWaitTime;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, moveDirection[i].transform.position, speed * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, moveDirection[i].transform.position) < 0.1f)
+        transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0)); //La plataforma se movera en un determinado tiempo y espacio.
+        currentTime += Time.deltaTime;
+        if (currentTime >= maxTime)
         {
-            if (waitTime <= 0)
-
-            {
-                if (moveDirection[i] != moveDirection[moveDirection.Length - 1])
-                {
-                    i++;
-                }
-
-                waitTime = startWaitTime;
-
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
-
+            speed = -speed;
+            currentTime = 0;
         }
     }
 }
