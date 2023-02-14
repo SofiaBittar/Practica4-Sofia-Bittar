@@ -14,7 +14,7 @@ public class AnimationPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) 
         {
             animator.SetBool(boolNew, true);
         }

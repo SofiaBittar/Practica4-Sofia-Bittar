@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private float punctuation = 0;
     private float time = 0;
-    public  AudioClip bellSound;
-    public float bellVolume;
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,12 +26,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime; // se utiliza 
-        if(time % 5 == 0)
-        {
-            AudioManager.instance.PlayAudio(bellSound, bellVolume);
-        }
+        time += Time.deltaTime;
     }
+        
     public void AddPunt(float value)
     {
         punctuation += value;
@@ -46,9 +41,5 @@ public class GameManager : MonoBehaviour
     {
         return time;
     }
-    public void ChangeScene(string name)
-    {
-        SceneManager.LoadScene(name);
-        AudioManager.instance.ClearAudioList();
-    }
+    
 }

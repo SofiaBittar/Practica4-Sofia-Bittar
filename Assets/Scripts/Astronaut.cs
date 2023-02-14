@@ -12,7 +12,6 @@ public class Astronaut : MonoBehaviour
     public float rayDistance = 1.5f;
     public bool IsGrounded;
     public float jumpForce=5f;
-    int hopLimit = 1;
     public LayerMask mascaraSuelo;
     public GameObject camara;
     public AudioClip jumpSound;

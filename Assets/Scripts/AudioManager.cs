@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
    
     void Awake()
     {
-        if (instance)
+        if (instance) 
         {
             Destroy(gameObject);
         }
@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    public AudioSource PlayAudio(AudioClip clip, float volume =1)
+    public AudioSource PlayAudio(AudioClip clip, float volume =1) // sirve para reproducir el audio 
     {
         GameObject sourceObj = new GameObject(clip.name);
         activeAudioGameObjects.Add(sourceObj);
@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(PlayAudio(source));
         return source;
     }
-    public AudioSource PlayAudioOnLoop(AudioClip clip, float volume = 1 )
+    public AudioSource PlayAudioOnLoop(AudioClip clip, float volume = 1 ) // sirve para reproducir el audio en bucle 
     {
         GameObject sourceObj = new GameObject(clip.name);
         activeAudioGameObjects.Add(sourceObj);
@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
         source.Play();
         return source;
     }
-    public void ClearAudioList()
+    public void ClearAudioList() // sirve para limpiar los audios 
     {
         foreach(GameObject go in activeAudioGameObjects)
         {

@@ -9,7 +9,7 @@ public class AmbientNoise : MonoBehaviour
     public float volumeMusic;
     private void Start()
     {
-        AudioManager.instance.PlayAudioOnLoop(ambientNoise, volumeMusic);
+        AudioManager.instance.PlayAudioOnLoop(ambientNoise, volumeMusic); // instancia el la musica de fondo 
     }
     // Update is called once per frame
     void Update()

@@ -14,7 +14,7 @@ public class Awards : MonoBehaviour // Cada que agarre un premio suma puntos
         if (collision.CompareTag("Astronaut")) //busca infromacion dentro del astronauta 
      
         {
-            AudioManager.instance.PlayAudioOnLoop(awardsSound, awardsVolume); // activa el audio 
+            AudioManager.instance.PlayAudio(awardsSound, awardsVolume); // activa el audio 
             GameManager.instance.AddPunt(awardsNumber); // el gamemanager instancia la variable de puntos y cada que agarre un premio suma  
             GetComponent<SpriteRenderer>().enabled = false;
             
