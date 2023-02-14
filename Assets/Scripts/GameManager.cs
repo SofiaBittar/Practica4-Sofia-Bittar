@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    private int punctuation = 0;
+    private float punctuation = 0;
     private float time = 0;
     public  AudioClip bellSound;
     public float bellVolume;
@@ -33,11 +33,11 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.PlayAudio(bellSound, bellVolume);
         }
     }
-    public void AddPunt(int value)
+    public void AddPunt(float value)
     {
         punctuation += value;
     }
-    public int Getpunt()
+    public float GetPunt()
     {
         return punctuation;
     }
