@@ -63,7 +63,7 @@ public class Astronaut : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         }
     }
-    void OnDrawGizmosSelected() // se emplean para que sea visible el rayo que sale a travez del personaje 
+    void OnDrawGizmosSelected() // se emplean para que sea visible el rayo que sale a traves del personaje 
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, Vector2.down * rayDistance);

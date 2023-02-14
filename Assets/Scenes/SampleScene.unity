@@ -5719,7 +5719,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 68835c79e85209e448d31d4e85cb13eb, type: 3}
   jumpVolume: 1
   deadslimeSound: {fileID: 8300000, guid: 2e37342b1c0d5ee47899bf1ac4447232, type: 3}
-  deadslimeVolume: 1.37
+  deadslimeVolume: 1.83
 --- !u!1 &754877647
 GameObject:
   m_ObjectHideFlags: 0
