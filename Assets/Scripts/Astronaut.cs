@@ -15,6 +15,12 @@ public class Astronaut : MonoBehaviour
     int hopLimit = 1;
     public LayerMask mascaraSuelo;
     public GameObject camara;
+    public AudioClip jumpSound;
+    [Range(0, 1)]
+    public float jumpVolume;
+    public AudioClip deadslimeSound;
+    [Range(0, 2)]
+    public float deadslimeVolume;
 
 
     // Start is called before the first frame update
@@ -49,6 +55,7 @@ public class Astronaut : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)  && IsGrounded)
         {
             rb.velocity = new Vector3(rb.velocity.x, saltoVelocity,0);
+            AudioManager.instance.PlayAudio(jumpSound, jumpVolume);
         }
 
         if (transform.position.y <= -6.36f)
@@ -78,6 +85,7 @@ public class Astronaut : MonoBehaviour
         if(other.CompareTag("DeadSlime"))
         {
             Destroy(other.transform.parent.gameObject);
+            AudioManager.instance.PlayAudio(deadslimeSound, deadslimeVolume);
         }
 
     }
