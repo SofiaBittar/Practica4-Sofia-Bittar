@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
         GameObject sourceObj = new GameObject(clip.name);
         activeAudioGameObjects.Add(sourceObj);
         sourceObj.transform.SetParent(this.transform);
-        AudioSource source = sourceObj.AddComponent<AudioSource>();
+        AudioSource source = sourceObj.AddComponent<AudioSource>(); // le añade el componente de audio 
         source.clip = clip;
         source.volume = volume;
         source.loop = true;
@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour
             yield return null;
 
         }
-        if (source)
+        if (source) 
         {
             activeAudioGameObjects.Remove(source.gameObject);
             Destroy(source.gameObject);
